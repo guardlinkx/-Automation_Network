@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.spec
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Build artifacts
+*.exe
+output/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Terraform
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/.terraform.lock.hcl
+
+# Lambda build output
+lambda_packages/
+_build_layer/
+
+# Build artifacts (numbered)
+build2/
+dist2/
+
+# Firebase credentials (never commit)
+*.json.key
+califax-*.json
+
+# Claude
+.claude/
