@@ -1,0 +1,35 @@
+[package]
+name = "califax-crypto"
+version = "0.1.0"
+edition = "2021"
+description = "Post-quantum hybrid cryptography for Califax VPN"
+license = "MIT"
+
+[dependencies]
+# Post-quantum cryptography (CRYSTALS-Kyber-1024)
+pqcrypto-kyber = "0.8"
+pqcrypto-traits = "0.3"
+
+# Classical key exchange (X25519)
+x25519-dalek = { version = "2", features = ["static_secrets"] }
+
+# Symmetric encryption
+aes-gcm = "0.10"
+chacha20poly1305 = "0.10"
+
+# Randomness
+rand = "0.8"
+
+# Key derivation
+sha2 = "0.10"
+hkdf = "0.12"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Error handling
+thiserror = "1"
+
+# Secure memory wiping
+zeroize = { version = "1", features = ["derive"] }

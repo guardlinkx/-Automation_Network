@@ -1,0 +1,9 @@
+scikit-learn==1.4.0
+xgboost==2.0.3
+lightgbm==4.3.0
+onnx==1.15.0
+onnxruntime==1.17.0
+skl2onnx==1.16.0
+onnxmltools==1.12.0
+pandas==2.2.0
+numpy==1.26.3

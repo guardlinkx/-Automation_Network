@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = [
+    "califax-crypto",
+    "califax-tunnel",
+    "califax-mesh",
+    "califax-ai",
+    "califax-identity",
+    "califax-location",
+    "califax-node",
+    "califax-pyo3",
+]
