@@ -71,9 +71,10 @@ def generate_synthetic_data(
         "bytes_per_second": rng.normal(300_000, 100_000, n_anomalous).clip(100_000, 1_000_000),
         "packets_per_second": rng.normal(1_000, 400, n_anomalous).clip(200, 5_000),
         "unique_destinations": rng.poisson(50, n_anomalous).clip(20, 200),
-        "avg_packet_size": rng.choice(
-            [rng.normal(80, 20, n_anomalous).clip(40, 150),
-             rng.normal(1450, 30, n_anomalous).clip(1400, 1500)],
+        "avg_packet_size": np.where(
+            rng.binomial(1, 0.5, n_anomalous),
+            rng.normal(80, 20, n_anomalous).clip(40, 150),
+            rng.normal(1450, 30, n_anomalous).clip(1400, 1500),
         ),
         "connection_duration": rng.exponential(5, n_anomalous).clip(0.1, 30),
         "reconnect_frequency": rng.poisson(15, n_anomalous).clip(5, 60),

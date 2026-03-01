@@ -33,7 +33,7 @@ def export_sklearn_to_onnx(model, feature_names: list[str], output_path: str) ->
     onnx_model = convert_sklearn(
         model,
         initial_types=initial_type,
-        target_opset=15,
+        target_opset={"": 15, "ai.onnx.ml": 3},
     )
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
