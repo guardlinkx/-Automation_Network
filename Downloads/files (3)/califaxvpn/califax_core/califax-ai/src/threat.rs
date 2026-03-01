@@ -74,7 +74,7 @@ impl ThreatDetector {
     }
 
     /// Analyse a single network flow and return a [`ThreatResult`].
-    pub fn analyze(&self, input: &ThreatInput) -> Result<ThreatResult> {
+    pub fn analyze(&mut self, input: &ThreatInput) -> Result<ThreatResult> {
         let features = input.to_features();
 
         // Validate -- reject NaN / Inf values.

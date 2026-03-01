@@ -69,7 +69,7 @@ impl AnomalyScorer {
     }
 
     /// Score a single traffic session.
-    pub fn score(&self, input: &AnomalyInput) -> Result<AnomalyResult> {
+    pub fn score(&mut self, input: &AnomalyInput) -> Result<AnomalyResult> {
         let features = input.to_features();
 
         if features.iter().any(|v| !v.is_finite()) {

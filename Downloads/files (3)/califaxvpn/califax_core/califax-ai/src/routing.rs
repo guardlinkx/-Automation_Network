@@ -62,7 +62,7 @@ impl RouteOptimizer {
     }
 
     /// Predict the expected latency (in milliseconds) for a single route.
-    pub fn predict_latency(&self, input: &RouteInput) -> Result<f32> {
+    pub fn predict_latency(&mut self, input: &RouteInput) -> Result<f32> {
         let features = input.to_features();
 
         if features.iter().any(|v| !v.is_finite()) {
@@ -90,7 +90,7 @@ impl RouteOptimizer {
     ///
     /// Returns [`AiError::InvalidInput`] if `candidates` is empty, or
     /// propagates any inference error.
-    pub fn recommend_route(&self, candidates: &[RouteInput]) -> Result<usize> {
+    pub fn recommend_route(&mut self, candidates: &[RouteInput]) -> Result<usize> {
         if candidates.is_empty() {
             return Err(AiError::InvalidInput(
                 "candidates list must not be empty".into(),
